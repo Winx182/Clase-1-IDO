@@ -1,0 +1,33 @@
+Probabilidad en Python Resumen
+En probabilidad clásica o Modelo Laplaciano
+?Experimento aleatorio: Un suceso que produce resultados aleatorios (cómo tirar un dado o una moneda).
+?Espacio Muestral (): Conjunto de todos los posibles resultados del experimento aleatorio.
+?Hipótesis del Modelo Clásico:
+1.La cardinalidad del espacio muestral () es finita.
+2.A cada elemento/evento elemental del espacio muestral se le asigna la probabilidad 1 / Omega
+?Tratamiento de Eventos: Los eventos se tratan como subconjuntos de omega (existe un diccionario con conjuntos donde la intersección representa "y", la unión "o" 
+?Cálculo de la Probabilidad: Para un evento :
+ A/Omega
+
+Tirar 2 dados honestos
+?Cada dado tiene números del 1 al 6.
+?Al lanzar los dos dados juntos, los resultados se guardan como parejas: (dado 1, dado 2).
+?Totales posibles: 6 × 6 = 36 combinaciones distintas.
+¿Cómo lo hacemos en Python?
+A. La librería itertools
+?En lugar de hacer mil for anidados, usamos itertools.product(). Nos ahorra código y calcula el producto cartesiano en un segundo.
+?Si usamos set(), convertimos el resultado en un conjunto formal de elementos.
+B. Generar el espacio muestral con listas
+Podemos crear la lista de los 36 resultados súper rápido así:
+Omega = [(i, j) for i in range(1, 7) for j in range(1, 7)]
+C. Filtrar eventos por la suma de los dados (S_n)
+Creamos una función para buscar qué parejas suman un número específico n:
+?Sumas imposibles: Sacar menos de 2 o más de 12 nos da una lista vacía (Probabilidad = 0).
+?Sumas posibles: Por ejemplo, para sumar 9, las opciones son: (3,6), (4,5), (5,4), (6,3).
+Calculando probabilidades reales
+?Probabilidad de que la suma sea 9:
+Hay 4 casos a favor de 36 posibles:
+P(Suma 9) = 4 / 36 = 1 / 9 ˜ 11.1%
+?Probabilidad de sacar doble 6 (6,6):
+Solo hay 1 caso a favor entre 36:
+P(6,6) = 1 / 36 ˜ 2.7%

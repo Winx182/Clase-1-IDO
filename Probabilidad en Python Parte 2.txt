@@ -1,0 +1,31 @@
+Probabilidad en Python Resumen
+(Parte 2)
+1. Conceptos Fundamentales
+?Evento: Subconjunto del espacio muestral Omega.
+?
+?Asignación de Probabilidad: A cada subconjunto o evento A contenido en Omega, se le asigna un número entre 0 y 1 usando la regla clásica:
+
+?P(A) = (cardinalidad de A) / (cardinalidad de Omega)
+2. Definición de la Función de Probabilidad en Python
+Para calcular la probabilidad de un evento de forma automática en Python, se define una función dividiendo las cardinalidades mediante la función integrada len():
+
+def P(A, Omega):
+return len(A) / len(Omega)
+
+?len(A): Obtiene la cardinalidad del evento A (número de casos favorables).
+?
+?len(Omega): Obtiene la cardinalidad del espacio muestral Omega (número de casos totales).
+?
+3. Eventos y Operaciones de Conjuntos en Python
+Se utilizan los operadores de conjuntos integrados en Python para definir eventos y calcular sus probabilidades:
+
+?Unión de eventos (A U B): Representa que sucede el evento A o sucede el evento B.
+Intersección de eventos (A n B): Representa que suceden ambos eventos al mismo tiempo (A y B).
+?Diferencia de eventos (A \ B): Representa que sucede A pero no sucede B.
+?Complemento de un evento (A^c): Son todos los elementos que están en el espacio muestral Omega pero no están en A.
+4. Probabilidad Condicionada
+?Definición matemática: La probabilidad de que suceda el evento A dado que ya sucedió el evento B se define como:
+
+?P(A | B) = P(A n B) / P(B)
+
+?Implementación en Python: Se define una función que toma los eventos A y B dentro del espacio muestral Omega:
